@@ -1,0 +1,14 @@
+node_modules/
+
+.env
+
+log/
+logs/
+
+allure-results/
+allure-report/
+
+.DS_Store
+Thumbs.db
+
+assets/video/
