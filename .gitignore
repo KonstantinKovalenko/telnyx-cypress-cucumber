@@ -12,3 +12,5 @@ allure-report/
 Thumbs.db
 
 assets/video/
+
+cypress/screenshots/
