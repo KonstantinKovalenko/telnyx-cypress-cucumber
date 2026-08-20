@@ -1,11 +1,13 @@
-import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor'
+import { When, Then } from '@badeball/cypress-cucumber-preprocessor'
 import header from '../../components/header'
 import megaMenu from '../../components/megaMenu'
 import voiceAIAgentsPage from '../../pages/products/voiceAIAgents.page'
 import inferencePage from '../../pages/products/inference.page'
-import travelAndHospitalityPage from '../../pages/products/travelAndHospitality.page'
+import travelAndHospitalityPage from '../../pages/travelAndHospitality.page'
+import voiceAIPage from '../../pages/pricing/voiceAI.page'
 
 let firstTabContentHeader: string
+
 // TC-05
 When('the Voice AI Agents page is opened from the Products mega menu', () => {
     header.getProductsBtn().should('be.visible').click()
@@ -111,4 +113,31 @@ Then('the content associated with the second tab is displayed and differs from t
         .then((secondTabText) => {
             expect(secondTabText.trim()).not.to.equal(firstTabContentHeader)
         })
+})
+
+// TC-08
+When('the Voice AI pricing page is opened from the Pricing mega menu', () => {
+    header.getPricingBtn().should('be.visible').click()
+    megaMenu.getVoiceAICategory().should('be.visible').click()
+    cy.url().should('include', '/voice-ai-agents')
+})
+When('the ESTIMATE YOUR COST section is scrolled into view', () => {
+    voiceAIPage.getEstimateSection().scrollIntoView()
+    voiceAIPage.getEstimateSection().should('be.visible')
+})
+Then('the Minutes per month input is displayed', () => {
+    voiceAIPage.getMinutesPerMonthInput().should('be.visible')
+})
+Then('the Estimated cost per minute text is displayed', () => {
+    voiceAIPage.getEstimatedCostText().should('be.visible')
+
+})
+
+When('"450,000" is entered into the Minutes per month input', () => {
+    voiceAIPage.getMinutesPerMonthInput()
+        .clear()
+        .type('450,000')
+})
+Then('the Estimated cost per month text is changed accordingly', () => {
+    voiceAIPage.getEstimatedCostText().should('contain.text', '450,000')
 })

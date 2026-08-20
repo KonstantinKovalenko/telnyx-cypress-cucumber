@@ -20,13 +20,14 @@ async function setupNodeEvents(
 }
 
 export default defineConfig({
-    viewportWidth: 1920,
-    viewportHeight: 1080,
+    viewportWidth: 375,
+    viewportHeight: 812,
 
     e2e: {
         baseUrl: 'https://telnyx.com',
-        specPattern: 'cypress/e2e/features/desktop/**/*.feature',
-        excludeSpecPattern: 'cypress/e2e/features/mobile/**/*.feature',
+        specPattern: 'cypress/e2e/features/mobile/**/*.feature',
+        includeShadowDom: true,
+        defaultCommandTimeout: 15000,
         setupNodeEvents,
     },
 })

@@ -28,6 +28,34 @@ class MegaMenu {
     getTravelAndHospitalityCategory(){
         return cy.contains('h2', 'Travel and Hospitality')
     }
+
+    getVoiceAICategory(){
+        return cy.contains('h2', 'Voice AI')
+    }
+
+    getVoiceAPICategory(){
+        return cy.contains('h2', 'Voice API')
+    }
+
+    getOurNetworkCategory(){
+        return cy.contains('h2', 'Our Network')
+    }
+
+    getGlobalCommunicationsCategory(){
+        return cy.contains('h2', 'Global communications')
+    }
+
+    getEdgeComputeCategory(){
+        return cy.contains('h2', 'Edge Compute')
+    }
+
+    getAgentsPlatwormCategory(){
+        return cy.contains('h2', 'Agents Platform')
+    }
+
+    getIntegrationsCategory(){
+        return cy.contains('h2', 'Integrations')
+    }
 }
 
 export default new MegaMenu()

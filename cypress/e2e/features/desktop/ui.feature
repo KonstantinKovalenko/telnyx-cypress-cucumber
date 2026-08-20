@@ -32,3 +32,13 @@ Feature: User Interface
     When the second tab is clicked
     Then the second tab is selected
     And the content associated with the second tab is displayed and differs from the previously displayed content
+
+  Scenario: Estimated cost changes according to the entered monthly minutes
+    Given the Telnyx homepage is opened
+    When the Voice AI pricing page is opened from the Pricing mega menu
+    And the ESTIMATE YOUR COST section is scrolled into view
+    Then the Minutes per month input is displayed
+    And the Estimated cost per minute text is displayed
+
+    When "450,000" is entered into the Minutes per month input
+    Then the Estimated cost per month text is changed accordingly

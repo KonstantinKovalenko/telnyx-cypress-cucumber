@@ -33,6 +33,10 @@ class InferencePage {
     getAIMessages() {
         return this.getChatElement().find(this.selectors.aiMessages)
     }
+
+    getValidationMessage(){
+        return cy.contains('span', 'Please enter a message')
+    }
 }
 
 export default new InferencePage()

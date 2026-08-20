@@ -8,6 +8,8 @@
   },
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "cy:open:mobile": "cypress open --config-file cypress.mobile.config.ts",
+    "cy:run:mobile": "cypress run --config-file cypress.mobile.config.ts"
   }
 }
