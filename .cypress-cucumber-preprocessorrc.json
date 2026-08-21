@@ -1,0 +1,6 @@
+{
+  "json": {
+    "enabled": true,
+    "output": "reports/cucumber-json/report.json"
+  }
+}

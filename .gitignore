@@ -14,3 +14,5 @@ Thumbs.db
 assets/video/
 
 cypress/screenshots/
+
+reports/

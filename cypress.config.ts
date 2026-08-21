@@ -26,7 +26,6 @@ export default defineConfig({
     e2e: {
         baseUrl: 'https://telnyx.com',
         specPattern: 'cypress/e2e/features/desktop/**/*.feature',
-        excludeSpecPattern: 'cypress/e2e/features/mobile/**/*.feature',
         setupNodeEvents,
     },
 })

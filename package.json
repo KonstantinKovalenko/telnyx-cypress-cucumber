@@ -1,15 +1,18 @@
 {
+  "type": "module",
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^26.0.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
     "@types/node": "^26.2.0",
     "cypress": "^15.21.0",
+    "multiple-cucumber-html-reporter": "^4.2.0",
     "typescript": "^7.0.2"
   },
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run",
+    "cy:run": "cypress run -e jsonOutput=reports/cucumber-json/desktop.json",
     "cy:open:mobile": "cypress open --config-file cypress.mobile.config.ts",
-    "cy:run:mobile": "cypress run --config-file cypress.mobile.config.ts"
+    "cy:run:mobile": "cypress run --config-file cypress.mobile.config.ts -e jsonOutput=reports/cucumber-json/mobile.json",
+    "report": "node scripts/generate-report.js"
   }
 }
