@@ -25,23 +25,9 @@ class AIWidget {
         return cy.get(this.selectors.chatMessages).first()
     }
 
-    getSendToChatBtn(){
-        return cy.get('button.rounded-full.p-2.size-10')
+    getSendToChatBtn() {
+        return cy.get(this.selectors.siteAIWidget).find('button.rounded-full.p-2.size-10')
     }
-
-    /* async getLastChatMessageText() {
-        const messages = this.#chatMessages
-        const count = await messages.length
-
-        if (!count) {
-            return ''
-        }
-        return await messages[count - 1].getText()
-    } */
-
-    /* async getChatMessageCount() {
-        return await this.#chatMessages.length
-    } */
 }
 
 export default new AIWidget()

@@ -6,7 +6,6 @@ import megaMenu from '../../components/megaMenu'
 When('the Contact Us page is opened from the header', () => {
     header.getContactUsBtn().should('be.visible').click()
 })
-
 Then('the Contact Us page is displayed', () => {
     cy.url().should('include', '/contact-us')
 })
@@ -16,7 +15,6 @@ When('the Cloud VPN page is opened from the Products mega menu', () => {
     header.getProductsBtn().should('be.visible').click()
     megaMenu.getCloudVPNLink().should('be.visible').click()
 })
-
 Then('the Cloud VPN page is displayed', () => {
     cy.url().should('include', '/cloud-vpn')
 })
@@ -26,7 +24,6 @@ When('the Healthcare page is opened from the Solutions mega menu', () => {
     header.getSolutionsBtn().should('be.visible').click()
     megaMenu.getHealthcareCategory().should('be.visible').click()
 })
-
 Then('the Healthcare page is displayed', () => {
     cy.url().should('include', '/healthcare')
 })
@@ -39,7 +36,6 @@ When('the Dev Docs page is opened from the Developers mega menu', () => {
         .invoke('removeAttr', 'target')
         .click()
 })
-
 Then('the Dev Docs page is displayed', () => {
     cy.url().should('eq', 'https://developers.telnyx.com/docs/overview')
 })

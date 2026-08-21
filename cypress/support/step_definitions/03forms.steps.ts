@@ -4,7 +4,6 @@ import megaMenu from '../../components/megaMenu'
 import voiceAPIPage from '../../pages/pricing/voiceAPI.page'
 import inferencePage from '../../pages/products/inference.page'
 
-
 // TC-09
 When('the Voice API page is opened from the Pricing mega menu', () => {
     header.getPricingBtn().click()

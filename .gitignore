@@ -11,7 +11,7 @@ allure-report/
 .DS_Store
 Thumbs.db
 
-assets/screenshot/
+assets/screenshots/
 assets/video/
 
 cypress/screenshots/

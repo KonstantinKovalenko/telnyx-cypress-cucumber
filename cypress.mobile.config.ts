@@ -12,7 +12,7 @@ async function setupNodeEvents(
     on(
         'file:preprocessor',
         createBundler({
-            plugins: [createEsbuildPlugin(config)],
+            plugins: [createEsbuildPlugin(config)]
         })
     )
 
@@ -28,6 +28,6 @@ export default defineConfig({
         specPattern: 'cypress/e2e/features/mobile/**/*.feature',
         includeShadowDom: true,
         defaultCommandTimeout: 15000,
-        setupNodeEvents,
-    },
+        setupNodeEvents
+    }
 })

@@ -1,11 +1,6 @@
 class ContactUsPage {
     private selectors = {
-        mainForm: '#mktoForm_1987',
         dsaContactSection: 'li[linktext="DSA Contact"]'
-    }
-
-    getMainForm() {
-        return cy.get(this.selectors.mainForm)
     }
 
     getDSAContactSection() {

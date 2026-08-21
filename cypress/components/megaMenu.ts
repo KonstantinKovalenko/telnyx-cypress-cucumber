@@ -49,7 +49,7 @@ class MegaMenu {
         return cy.contains('h2', 'Edge Compute')
     }
 
-    getAgentsPlatwormCategory(){
+    getAgentsPlatformCategory(){
         return cy.contains('h2', 'Agents Platform')
     }
 

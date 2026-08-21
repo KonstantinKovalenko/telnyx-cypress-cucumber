@@ -15,3 +15,7 @@ Given('the Inference API page is opened', () => {
 Given('the Contact Us page is opened', () => {
     cy.visit('https://telnyx.com/contact-us')
 })
+
+Given('cookies are accepted', () => {
+    cy.acceptCookies()
+})

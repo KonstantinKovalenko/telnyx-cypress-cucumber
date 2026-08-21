@@ -17,7 +17,6 @@ When('the Voice AI Agents page is opened from the Products mega menu', () => {
 When('the FAQ section is scrolled into view', () => {
     voiceAIAgentsPage.getFAQSection().scrollIntoView()
 })
-
 Then('the FAQ section is displayed', () => {
     voiceAIAgentsPage.getFAQSection().should('be.visible')
 })
@@ -25,7 +24,6 @@ Then('the FAQ section is displayed', () => {
 When('the "Which languages are supported?" accordion item is clicked', () => {
     voiceAIAgentsPage.getLanguagesAccordion().should('be.visible').click()
 })
-
 Then('the accordion item is expanded', () => {
     voiceAIAgentsPage.getLanguagesAccordion().should('have.attr', 'aria-expanded', 'true')
 })
@@ -33,7 +31,6 @@ Then('the accordion item is expanded', () => {
 When('the "Which languages are supported?" accordion item is clicked again', () => {
     voiceAIAgentsPage.getLanguagesAccordion().click()
 })
-
 Then('the accordion item is collapsed', () => {
     voiceAIAgentsPage.getLanguagesAccordion().should('have.attr', 'aria-expanded', 'false')
 })

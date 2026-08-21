@@ -124,6 +124,7 @@ telnyx-cypress-cucumber/
 ├── .gitignore
 ├── cypress.config.ts
 ├── cypress.mobile.config.ts
+├── package-lock.json
 ├── package.json
 └── README.md
 ```
@@ -162,7 +163,7 @@ npm install
 | `npm run cy:run` | Run all desktop Cucumber tests in headless mode |
 | `npm run cy:open:mobile` | Open Cypress Test Runner with the mobile configuration |
 | `npm run cy:run:mobile` | Run mobile Cucumber tests in headless mode |
-| `npm run report` | Generate the Cucumber HTML report from test results |
+| `npm run report` | Generates the Cucumber HTML report from test results and opens it |
 
 ---
 

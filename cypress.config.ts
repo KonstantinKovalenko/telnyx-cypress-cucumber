@@ -12,7 +12,7 @@ async function setupNodeEvents(
     on(
         'file:preprocessor',
         createBundler({
-            plugins: [createEsbuildPlugin(config)],
+            plugins: [createEsbuildPlugin(config)]
         })
     )
 
@@ -26,6 +26,6 @@ export default defineConfig({
     e2e: {
         baseUrl: 'https://telnyx.com',
         specPattern: 'cypress/e2e/features/desktop/**/*.feature',
-        setupNodeEvents,
-    },
+        setupNodeEvents
+    }
 })

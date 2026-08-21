@@ -1,4 +1,4 @@
-Feature: Mobile Ai Assistant
+Feature: Mobile AI Assistant
 
   Scenario: AI Assistant chat works correctly in mobile view
     Given the Telnyx homepage is opened in a mobile viewport
@@ -7,6 +7,6 @@ Feature: Mobile Ai Assistant
     Then the AI Assistant chat is displayed
     And the greeting message is displayed
 
-    When "Hello" is entered into the chat input and the message is submitted
-    Then the submitted "Hello" message is displayed in the chat
+    When "Good day" is entered into the chat input and the message is submitted
+    Then the submitted "Good day" message is displayed in the chat
     And the AI Assistant response is displayed in the chat

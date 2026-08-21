@@ -3,7 +3,7 @@ class InferencePage {
         voiceAgentButtons: '[class*="group/voice"][class*="w-full"]',
         messageInput: '[aria-label="Type message here"]',
         userMessages: '.bg-palette-green-bright-10',
-        aiMessages: '.bg-palette-tan-bright-20',
+        aiMessages: '.bg-palette-tan-bright-20'
     }
 
     getChatTitle(){

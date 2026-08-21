@@ -15,7 +15,6 @@ class VoiceAIPage {
     getEstimatedCostText() {
         return cy.contains('span.typography-p-min.text-palette-grey-60', 'per month at')
     }
-
 }
 
 export default new VoiceAIPage()

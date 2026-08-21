@@ -6,10 +6,6 @@ Given('the Telnyx homepage is opened in a mobile viewport', () => {
     cy.visit('/')
 })
 
-Given('cookies are accepted', () => {
-    cy.acceptCookies()
-})
-
 When('the AI Assistant button is clicked', () => {
     aiWidget.getOpenWidgetBtn().should('be.visible').click()
 })
@@ -22,11 +18,11 @@ Then('the greeting message is displayed', () => {
         .and('not.be.empty')
 })
 
-When('"Hello" is entered into the chat input and the message is submitted', () => {
+When('"Good day" is entered into the chat input and the message is submitted', () => {
     aiWidget.getUserMessageInput().type('Good day')
     aiWidget.getSendToChatBtn().should('be.visible').click()
 })
-Then('the submitted "Hello" message is displayed in the chat', () => {
+Then('the submitted "Good day" message is displayed in the chat', () => {
     aiWidget.getChatMessages()
         .eq(1)
         .should('be.visible')
