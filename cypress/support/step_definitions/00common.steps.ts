@@ -5,15 +5,15 @@ Given('the Telnyx homepage is opened', () => {
 })
 
 Given('the Voice API page is opened', () => {
-    cy.visit('https://telnyx.com/pricing/voice-api')
+    cy.visit('/pricing/voice-api')
 })
 
 Given('the Inference API page is opened', () => {
-    cy.visit('https://telnyx.com/products/inference')
+    cy.visit('/products/inference')
 })
 
 Given('the Contact Us page is opened', () => {
-    cy.visit('https://telnyx.com/contact-us')
+    cy.visit('/contact-us')
 })
 
 Given('cookies are accepted', () => {

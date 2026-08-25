@@ -2,8 +2,7 @@ class InferencePage {
     private selectors = {
         voiceAgentButtons: '[class*="group/voice"][class*="w-full"]',
         messageInput: '[aria-label="Type message here"]',
-        userMessages: '.bg-palette-green-bright-10',
-        aiMessages: '.bg-palette-tan-bright-20'
+        messagesContainer: 'div.flex-1.flex.flex-col.gap-new-xs.my-new-md',
     }
 
     getChatTitle(){
@@ -22,16 +21,8 @@ class InferencePage {
         return cy.contains('span', 'SEND MESSAGE')
     }
 
-    getChatElement() {
-        return this.getChatTitle().parent().parent()
-    }
-
-    getUserMessages() {
-        return this.getChatElement().find(this.selectors.userMessages)
-    }
-
-    getAIMessages() {
-        return this.getChatElement().find(this.selectors.aiMessages)
+    getChatMessages() {
+        return cy.get(this.selectors.messagesContainer).children()
     }
 
     getValidationMessage(){

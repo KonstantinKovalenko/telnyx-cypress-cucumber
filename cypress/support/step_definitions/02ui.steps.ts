@@ -6,8 +6,6 @@ import inferencePage from '../../pages/products/inference.page'
 import travelAndHospitalityPage from '../../pages/travelAndHospitality.page'
 import voiceAIPage from '../../pages/pricing/voiceAI.page'
 
-let firstTabContentHeader: string
-
 // TC-05
 When('the Voice AI Agents page is opened from the Products mega menu', () => {
     header.getProductsBtn().should('be.visible').click()
@@ -55,12 +53,14 @@ When('the "Hello" message is sent to the AI Agent', () => {
     inferencePage.getSendMessageBtn().should('be.visible').click()
 })
 Then('the "Hello" message is displayed in the chat', () => {
-    inferencePage.getUserMessages().last()
+    inferencePage.getChatMessages()
+        .eq(0)
         .should('be.visible')
-        .should('contain.text', 'Hello')
+        .and('contain.text', 'Hello')
 })
 Then('the AI-generated answer is displayed in the chat', () => {
-    inferencePage.getAIMessages().last()
+    inferencePage.getChatMessages()
+        .eq(1)
         .should('be.visible')
         .and('not.be.empty')
 })
@@ -87,7 +87,7 @@ Then('the first tab content is displayed', () => {
         .should('be.visible')
         .invoke('text')
         .then((text) => {
-            firstTabContentHeader = text.trim()
+            cy.wrap(text.trim()).as('firstTabContentHeader')
         })
 })
 
@@ -108,7 +108,9 @@ Then('the content associated with the second tab is displayed and differs from t
         .should('be.visible')
         .invoke('text')
         .then((secondTabText) => {
-            expect(secondTabText.trim()).not.to.equal(firstTabContentHeader)
+            cy.get('@firstTabContentHeader').then((firstTabContentHeader) => {
+                expect(secondTabText.trim()).not.to.equal(firstTabContentHeader)
+            })
         })
 })
 
