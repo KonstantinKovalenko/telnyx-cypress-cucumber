@@ -1,18 +1,18 @@
 import { Given } from '@badeball/cypress-cucumber-preprocessor'
 
-Given('the Telnyx homepage is opened', () => {
+Given('I am an unregistered user on the Telnyx homepage', () => {
     cy.visit('/')
 })
 
-Given('the Voice API page is opened', () => {
+Given('I am an unregistered user on the Voice API page', () => {
     cy.visit('/pricing/voice-api')
 })
 
-Given('the Inference API page is opened', () => {
+Given('I am an unregistered user on the Inference API page', () => {
     cy.visit('/products/inference')
 })
 
-Given('the Contact Us page is opened', () => {
+Given('I am an unregistered user on the Contact Us page', () => {
     cy.visit('/contact-us')
 })
 

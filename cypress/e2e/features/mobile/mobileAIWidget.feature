@@ -1,12 +1,12 @@
 Feature: Mobile AI Assistant
 
-  Scenario: AI Assistant chat works correctly in mobile view
-    Given the Telnyx homepage is opened in a mobile viewport
+  Scenario: Unregistered user interacts with the AI Assistant on mobile
+    Given I am an unregistered user on the Telnyx homepage in a mobile viewport
     And cookies are accepted
-    When the AI Assistant button is clicked
+    When I open the AI Assistant
     Then the AI Assistant chat is displayed
     And the greeting message is displayed
 
-    When "Good day" is entered into the chat input and the message is submitted
-    Then the submitted "Good day" message is displayed in the chat
-    And the AI Assistant response is displayed in the chat
+    When I send "Good day" to the AI Assistant
+    Then my message is displayed in the AI Assistant chat
+    And the AI Assistant response is displayed

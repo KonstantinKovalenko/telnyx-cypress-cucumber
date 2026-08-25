@@ -1,22 +1,19 @@
 Feature: Forms & Validations
 
-  Scenario: Download SIP Trunking Pricing form displays validation messages after empty submission
-    Given the Telnyx homepage is opened
-    When the Voice API page is opened from the Pricing mega menu
-    And the Download SIP Trunking Pricing form is scrolled into view
-    And the Submit Button is clicked
-    Then the "This field is required" validation message is displayed
+  Scenario: Unregistered user is prevented from submitting an empty pricing form
+    Given I am an unregistered user on the Telnyx homepage
+    When I navigate to the SIP Trunking pricing form from the Pricing menu
+    And I submit the form without entering any information
+    Then a required field validation message is displayed
 
-  Scenario: Download SIP Trunking Pricing form can be submitted using valid data
-    Given the Voice API page is opened
-    When the Download SIP Trunking pricing form is scrolled into view
-    And all mandatory fields are filled with valid data
-    And the Submit button is clicked
-    Then the confirmation message is displayed on the new page
+  Scenario: Unregistered user submits the SIP Trunking pricing form successfully
+    Given I am an unregistered user on the Voice API page
+    When I navigate to the SIP Trunking pricing form
+    And I submit the form with valid information
+    Then a confirmation message is displayed
 
-  Scenario: AI Agents chat displays validation message for an empty message
-    Given the Inference API page is opened
-    When the CHAT TO AN AGENT page element is scrolled into view
-    And the chat message input is left empty
-    And the SEND MESSAGE button is clicked
-    Then the "Please enter a message" validation message is displayed
+  Scenario: Unregistered user is prevented from sending an empty AI Agent message
+    Given I am an unregistered user on the Inference API page
+    When I navigate to the AI Agent chat element
+    And I try to send an empty message
+    Then a message validation error is displayed

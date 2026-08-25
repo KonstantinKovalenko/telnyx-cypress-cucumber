@@ -1,44 +1,37 @@
 Feature: User Interface
 
-  Scenario: FAQ questions on the Voice AI Agents page expand and collapse correctly
-    Given the Telnyx homepage is opened
-    When the Voice AI Agents page is opened from the Products mega menu
-    And the FAQ section is scrolled into view
-    Then the FAQ section is displayed
+  Scenario: Unregistered user expands and collapses an FAQ question
+    Given I am an unregistered user on the Telnyx homepage
+    When I navigate to the Voice AI Agents FAQ section
+    And I expand the "Which languages are supported?" question
+    Then the answer is displayed
 
-    When the "Which languages are supported?" accordion item is clicked
-    Then the accordion item is expanded
+    When I collapse the "Which languages are supported?" question
+    Then the answer is hidden
 
-    When the "Which languages are supported?" accordion item is clicked again
-    Then the accordion item is collapsed
+  Scenario: Unregistered user receives an AI Agent response
+    Given I am an unregistered user on the Telnyx homepage
+    When I navigate to the AI Agent chat
+    Then the default AI Agent is selected
 
-  Scenario: Default AI Agent answer to user's message
-    Given the Telnyx homepage is opened
-    When the Inference API page is opened from the Products mega menu
-    And the CHAT TO AN AGENT element is scrolled into view
-    Then the first AI Agent is selected by default
+    When I send "Hello" to the AI Agent
+    Then my message is displayed in the chat
+    And the AI Agent response is displayed
 
-    When the "Hello" message is sent to the AI Agent
-    Then the "Hello" message is displayed in the chat
-    And the AI-generated answer is displayed in the chat
+  Scenario: Unregistered user compares information in the Why Telnyx section
+    Given I am an unregistered user on the Telnyx homepage
+    When I navigate to the Why Telnyx section on the Travel and Hospitality page
+    Then the first tab is selected
+    And its content is displayed
 
-  Scenario: Why Telnyx content changes through tab selection
-    Given the Telnyx homepage is opened
-    When the Travel and Hospitality page is opened from the Solutions mega menu
-    And the WHY TELNYX? section is scrolled into view
-    Then the first tab is selected by default
-    And the first tab content is displayed
+    When I select the second tab
+    Then the second tab content is displayed
+    And it differs from the content of the first tab
 
-    When the second tab is clicked
-    Then the second tab is selected
-    And the content associated with the second tab is displayed and differs from the previously displayed content
+  Scenario: Unregistered user views the estimated Voice AI cost
+    Given I am an unregistered user on the Telnyx homepage
+    When I navigate to the Voice AI cost calculator
+    Then the cost calculator is displayed
 
-  Scenario: Estimated cost changes according to the entered monthly minutes
-    Given the Telnyx homepage is opened
-    When the Voice AI pricing page is opened from the Pricing mega menu
-    And the ESTIMATE YOUR COST section is scrolled into view
-    Then the Minutes per month input is displayed
-    And the Estimated cost per minute text is displayed
-
-    When "450,000" is entered into the Minutes per month input
-    Then the Estimated cost per month text is changed accordingly
+    When I enter 450,000 minutes per month
+    Then the estimated monthly cost is updated accordingly
